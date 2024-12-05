@@ -1,4 +1,4 @@
-FROM php:7.4-apache
+FROM php:7.2-apache
 
 LABEL maintainer="Déborah Malheiro <malheirodev@gmail.com>" \
   org.label-schema.name="debsmalheiro/php" \
@@ -29,7 +29,7 @@ ADD install_extensions /tmp/install_extensions
 ADD extensions /tmp/extensions
 RUN chmod +x /tmp/install_extensions
 
-RUN /tmp/install_extensions 7.4
+RUN /tmp/install_extensions 7.2
 
 # xdebug coverage mode
 RUN echo "xdebug.mode=coverage,debug" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
